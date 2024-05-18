@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starbucks Clone</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Starbucks</h1>
+        <img src="./assets/images/Screenshot from 2024-05-18 14-09-03.png" alt="Starbucks Logo">
+        <!-- <div class="logo">
+            <img src="./assets/images/Screenshot from 2024-05-18 14-09-03.png" alt="Starbucks Logo">
+            <h1>Starbucks</h1>
+        </div> -->
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="http://127.0.0.1:5500/menupage.html">Menu</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <h1>Welcome to Starbucks</h1>
+            <p>Your favorite coffee shop.</p>
+        </section>
+
+        <section id="menu">
+            <h2>Our Menu</h2>
+            <div class="menu-item">
+                <img class="images" src="./assets/images/hot chocolate.jpeg" alt="Coffee">
+                <p>Delicious Coffee</p>
+            </div>
+            <!-- Add more menu items as needed -->
+        </section>
+
+        <section id="about">
+            <h2>About Us</h2>
+            <p>Starbucks Corporation is an American multinational chain of coffeehouses and roastery reserves headquartered in Seattle, Washington.</p>
+        </section>
+
+        <section id="contact">
+            <div class="content">
+                <span class="one"><h2>Contact Us</h2></span>
+                <span class="two">
+                <form>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+
+                    <button type="submit">Submit</button>
+                </form>
+                </span>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Starbucks. All rights reserved.</p>
+    </footer>
+
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>

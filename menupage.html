@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starbucks Menu</title>
+    <link rel="stylesheet" href="./assets/css/menustyle.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Starbucks Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="http://127.0.0.1:5500/index1.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="menu">
+            <h2>Our Menu</h2>
+            <div class="filter-buttons">
+                <button class="filter-button" data-category="all">All</button>
+                <button class="filter-button" data-category="coffee">Coffee</button>
+                <button class="filter-button" data-category="tea">Tea</button>
+                <button class="filter-button" data-category="snacks">Snacks</button>
+            </div>
+            <div class="menu-category coffee">
+                <h3>Coffee</h3>
+                <div class="menu-item">
+                    <img src="coffee.jpg" alt="Coffee">
+                    <div class="menu-item-info">
+                        <h4>Espresso</h4>
+                        <p>A rich, full-bodied coffee with a hint of caramel.</p>
+                        <p><strong>$3.50</strong></p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="coffee.jpg" alt="Coffee">
+                    <div class="menu-item-info">
+                        <h4>Latte</h4>
+                        <p>A creamy blend of espresso and steamed milk.</p>
+                        <p><strong>$4.00</strong></p>
+                    </div>
+                </div>
+                <!-- Add more coffee items as needed -->
+            </div>
+
+            <div class="menu-category tea">
+                <h3>Tea</h3>
+                <div class="menu-item">
+                    <img src="tea.jpg" alt="Tea">
+                    <div class="menu-item-info">
+                        <h4>Green Tea</h4>
+                        <p>Fresh and soothing green tea.</p>
+                        <p><strong>$3.00</strong></p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="tea.jpg" alt="Tea">
+                    <div class="menu-item-info">
+                        <h4>Chai Latte</h4>
+                        <p>A spicy blend of tea and milk.</p>
+                        <p><strong>$3.50</strong></p>
+                    </div>
+                </div>
+                <!-- Add more tea items as needed -->
+            </div>
+
+            <div class="menu-category snacks">
+                <h3>Snacks</h3>
+                <div class="menu-item">
+                    <img src="snack.jpg" alt="Snack">
+                    <div class="menu-item-info">
+                        <h4>Croissant</h4>
+                        <p>A flaky, buttery pastry.</p>
+                        <p><strong>$2.50</strong></p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="snack.jpg" alt="Snack">
+                    <div class="menu-item-info">
+                        <h4>Blueberry Muffin</h4>
+                        <p>Soft muffin filled with fresh blueberries.</p>
+                        <p><strong>$2.75</strong></p>
+                    </div>
+                </div>
+                <!-- Add more snack items as needed -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Starbucks. All rights reserved.</p>
+    </footer>
+
+    <script src="./assets/js/menuscript.js"></script>
+</body>
+</html>
