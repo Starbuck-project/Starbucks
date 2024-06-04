@@ -26,6 +26,7 @@ header {
     padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     align-items: center;
     position: sticky;
     top: 0;
@@ -40,6 +41,8 @@ nav ul {
     list-style: none;
     display: flex;
     gap: 1.5rem;
+    font-size: 3rem;
+    font-weight: bold;
 }
 
 nav a {
@@ -57,6 +60,27 @@ main {
     max-width: 1200px;
     margin: auto;
 }
+
+#home {
+    margin-bottom: 2rem;
+    padding: 6rem;
+    background-color: white;
+    color: #0dce57;
+    background-image: url(https://stories.starbucks.com/uploads/2022/09/Starbucks-Virtual-Backgrounds-PikePlace.jpg);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    
+}
+
+@keyframes aliveText {
+        0% { transform: translateY(0); }
+        50% { transform: translateY(-10px) scale(1.1); }
+        100% { transform: translateY(0); }
+      }
+      #home h1,
+      #home p {
+        animation: aliveText 1.5s ease-in-out infinite;
+      }
 
 section {
     margin-bottom: 2rem;
@@ -95,10 +119,11 @@ section {
 .products {
     flex: 4;
     background-color: #fff;
-    padding: 20px;
+    margin: 32px;
+    padding: 32px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
   }
   
   
@@ -112,6 +137,7 @@ section {
   
   .card header {
     padding: 20px;
+    z-index: 999;
   }
   
   .card p {
@@ -242,28 +268,32 @@ color: var(--primary-color);
 /* REACH OUT STYLES END */
 
 /* Footer */
+
 footer {
-    background:var(--tertiary-color);
-    width: 100%;
-    padding: 40px 35px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
+    background-color: var(--tertiary-color);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
 
-footer h2 {
-    color:var(--other-color);
-    font-size: 30px;
-    margin: 0;
-}
+  footer h2 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    font-weight: bold;
+  }
 
-footer div {
-    line-height: 1.5;
-}
+  footer div {
+    font-size: 0.9em;
+  }
 
-footer a {
-    color:var(--);
-}
+  footer a {
+    color: #fff;
+    text-decoration: underline;
+  }
+
+  footer a:hover {
+    color: #f8f9fa;
+  }
 
 /* Media query for smaller desktop screens and smaller */
 @media  screen and (max-width: 980px) {

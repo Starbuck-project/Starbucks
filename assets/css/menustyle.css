@@ -118,6 +118,16 @@ section {
     color: #00704A;
 }
 
+.order-btn {
+    background-color: #ff7f50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 5px;
+  }
+
 footer {
     text-align: center;
     padding: 1rem;
