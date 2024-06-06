@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Starbucks Menu</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/menustyle.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
     <header>
@@ -25,10 +28,10 @@
         <section id="menu">
             <h2>Menu</h2>
             <div class="filter-buttons">
-                <button class="filter-button" data-category="#all">All</button>
-                <button class="filter-button" data-category="#coffee">Coffee</button>
-                <button class="filter-button" data-category="#tea">Tea</button>
-                <button class="filter-button" data-category="#snacks">Snacks</button>
+                <button class="btn btn-primary filter-button" data-category="all">All</button>
+                <button class="btn btn-primary filter-button" data-category="coffee">Coffee</button>
+                <button class="btn btn-primary filter-button" data-category="tea">Tea</button>
+                <button class="btn btn-primary filter-button" data-category="snacks">Snacks</button>
             </div>
             <div class="menu-category coffee">
                 <h3>Coffee</h3>
@@ -38,7 +41,7 @@
                         <h4>Espresso</h4>
                         <p>Espresso also has antioxidants and caffeine, which aid metabolism and help boost mood. Espresso is not inherently healthier than regular coffee, but drinkers can skip out on excess sweeteners and sugars often added in other coffee drinks since it can be enjoyed as is.Jul 8, 2022.</p>
                         <p><strong>$3.50</strong></p>
-                        <button class="order-btn">Order Now</button>
+                        <button class="btn btn-success order-btn" data-name="Espresso" data-price="$3.50">Order Now</button>
                     </div>
                 </div>
                 <div class="menu-item">
@@ -47,6 +50,7 @@
                         <h4>Latte</h4>
                         <p>Our Latte Macchiato and classic Latte (also called a Caffè Latte) have the same two ingredients: milk and espresso. But the craft of our baristas is what makes each drink unique. Latte Macchiato is our most espresso forward latte, while Latte has a more balanced, delicate flavor.</p>
                         <p><strong>$4.00</strong></p>
+                        <button class="btn btn-success order-btn" data-name="Latte" data-price="$3.50">Order Now</button>
                     </div>
                 </div>
                 <div class="menu-item">
@@ -55,6 +59,7 @@
                         <h4>Cappacino</h4>
                         <p>A cappuccino is a beloved espresso-based hot coffee drink made with layering of espresso, steamed milk, and milk foam on top. The taste of cappuccinos can be described as creamy, smooth, and balanced. The combination of flavors and textures creates a delightful and comforting experience for many coffee enthusiasts..</p>
                         <p><strong>$4.00</strong></p>
+                        <button class="btn btn-success order-btn" data-name="Cappacino" data-price="$3.50">Order Now</button>
                     </div>
                 </div>
                 <div class="menu-item">
@@ -63,6 +68,7 @@
                         <h4>Americano</h4>
                         <p>A delicious blend of Latin American and Asia/Pacific coffees, this espresso has a rich and caramelly sweetness and is at the heart of our handcrafted latte..</p>
                         <p><strong>$4.00</strong></p>
+                        <button class="btn btn-success order-btn" data-name="Americano" data-price="$3.50">Order Now</button>
                     </div>
                 </div>
                 <div class="menu-item">
@@ -71,6 +77,7 @@
                         <h4>Mocha</h4>
                         <p>Deliciously sweet, nutty and chocolatey. This creamy coffee drink is an espresso-based beverage but it often causes confusion as to exactly what a mocha is. We explain what is it, where it came from and how it differs to other coffees.</p>
                         <p><strong>$4.00</strong></p>
+                        <button class="btn btn-success order-btn" data-name="Mocha" data-price="$3.50">Order Now</button>
                     </div>
                 </div>
                 <div class="menu-item">
@@ -79,6 +86,7 @@
                         <h4>Macchiato</h4>
                         <p>A macchiato is a unique espresso based drink. It features a shot of strong coffee marked with just a bit of foamed or steamed milk. The Italian term “macchiato” translates to “marked” or “stained,” showing this splash in the dark espresso..</p>
                         <p><strong>$4.00</strong></p>
+                        <button class="btn btn-success order-btn" data-name="Macchiato" data-price="$3.50">Order Now</button>
                     </div>
                 </div>
                 <div class="menu-item">
@@ -87,6 +95,7 @@
                         <h4>Doppio</h4>
                         <p>Doppio - a double shot, extracted using a double handle and basket. This results in 60 ml of drink, double the amount of a single shot espresso. More commonly called a standard double. Doppio is Italian, meaning "double"..</p>
                         <p><strong>$4.00</strong></p>
+                        <button class="btn btn-success order-btn" data-name="Doppio" data-price="$3.50">Order Now</button>
                     </div>
                 </div>
                 <!-- Add more coffee items as needed -->
@@ -100,54 +109,61 @@
                         <h4>Green Tea</h4>
                         <p>Fresh and soothing green tea.</p>
                         <p><strong>$3.00</strong></p>
+                        <button class="btn btn-success order-btn" data-name="Green Tea" data-price="$3.00">Order Now</button>
                     </div>
                 </div>
                 <div class="menu-item">
                     <img src="./assets/images/green-tea.jpeg" alt="Tea">
                     <div class="menu-item-info">
-                        <h4>Hot-tea</h4>
+                        <h4>Hot Tea</h4>
                         <p>A spicy blend of tea and milk.</p>
                         <p><strong>$3.50</strong></p>
+                        <button class="btn btn-success order-btn" data-name="Hot Tea" data-price="$3.00">Order Now</button>
                     </div>
                 </div>
                 <div class="menu-item">
                     <img src="./assets/images/icd-tea.jpeg" alt="Tea">
                     <div class="menu-item-info">
-                        <h4>iced-tea</h4>
+                        <h4>Iced Tea</h4>
                         <p>A spicy blend of tea and milk.</p>
                         <p><strong>$3.50</strong></p>
+                        <button class="btn btn-success order-btn" data-name="Iced Tea" data-price="$3.00">Order Now</button>
                     </div>
                 </div>
                 <div class="menu-item">
                     <img src="./assets/images/yellowtea_700x.jpg" alt="Tea">
                     <div class="menu-item-info">
-                        <h4>Yellow-tea</h4>
+                        <h4>Yellow Tea</h4>
                         <p>A spicy blend of tea and milk.</p>
                         <p><strong>$3.50</strong></p>
+                        <button class="btn btn-success order-btn" data-name="Yellow Tea" data-price="$3.00">Order Now</button>
                     </div>
                 </div>
                 <div class="menu-item">
                     <img src="./assets/images/Oolong tea.webp" alt="Tea">
                     <div class="menu-item-info">
-                        <h4>Oolong-tea</h4>
+                        <h4>Oolong Tea</h4>
                         <p>A spicy blend of tea and milk.</p>
                         <p><strong>$3.50</strong></p>
+                        <button class="btn btn-success order-btn" data-name=" Oolong Tea" data-price="$3.00">Order Now</button>
                     </div>
                 </div>
                 <div class="menu-item">
                     <img src="./assets/images/Harbaltea.jpg" alt="Tea">
                     <div class="menu-item-info">
-                        <h4>Harble-tea</h4>
+                        <h4>Harble tea</h4>
                         <p>A spicy blend of tea and milk.</p>
                         <p><strong>$3.50</strong></p>
+                        <button class="btn btn-success order-btn" data-name="Harble Tea" data-price="$3.00">Order Now</button>
                     </div>
                 </div>
                 <div class="menu-item">
                     <img src="./assets/images/Black tea.jpeg" alt="Tea">
                     <div class="menu-item-info">
-                        <h4>Black-tea</h4>
+                        <h4>Black Tea</h4>
                         <p>A spicy blend of tea and milk.</p>
                         <p><strong>$3.50</strong></p>
+                        <button class="btn btn-success order-btn" data-name="Black Tea" data-price="$3.00">Order Now</button>
                     </div>
                 </div>
                 <!-- Add more tea items as needed -->
@@ -161,6 +177,7 @@
                         <h4>Croissant</h4>
                         <p>A flaky, buttery pastry.</p>
                         <p><strong>$2.50</strong></p>
+                        <button class="btn btn-success order-btn" data-name="Croissant" data-price="$3.00">Order Now</button>
                     </div>
                 </div>
                 <div class="menu-item">
@@ -169,6 +186,7 @@
                         <h4>Blueberry Pizza</h4>
                         <p>Soft muffin filled with fresh blueberries.</p>
                         <p><strong>$2.75</strong></p>
+                        <button class="btn btn-success order-btn" data-name="Blueberry Pizza" data-price="$3.00">Order Now</button>
                     </div>
                 </div>
                 <div class="menu-item">
@@ -177,6 +195,7 @@
                         <h4>Blueberry Burger</h4>
                         <p>Cake muffin filled with fresh blueberries.</p>
                         <p><strong>$2.75</strong></p>
+                        <button class="btn btn-success order-btn" data-name="Blueberry Burger" data-price="$3.00">Order Now</button>
                     </div>
                 </div>
                 <div class="menu-item">
@@ -185,30 +204,33 @@
                         <h4>Elk Burger</h4>
                         <p>Lean, delicious and free-range, what's not to like? Elk meat, recently rising in popularity because of a certain bow-hunting podcast celebrity, is something Canadians and Scandinavians have been eating for millennia. It makes a mean burger too.</p>
                         <p><strong>$2.75</strong></p>
+                        <button class="btn btn-success order-btn" data-name="ELK Burger" data-price="$3.00">Order Now</button>
                     </div>
                 </div>
                 <div class="menu-item">
                     <img src="./assets/images/burger_0.avif" alt="Snack">
                     <div class="menu-item-info">
-                        <h4>Cheeseburger</h4>
+                        <h4>Cheese Burger</h4>
                         <p>The addition of cheese transforms a burger... into a cheeseburger. But all joking aside, it just makes sense to add a layer of cheese to your burger, whether it's blue cheese or cheddar, you can't go wrong. Try this recipe for the ultimate cheeseburger, which calls for umami-packed Parmesan cheese. </p>
                         <p><strong>$2.75</strong></p>
+                        <button class="btn btn-success order-btn" data-name="Cheese Burger" data-price="$3.00">Order Now</button>
                     </div>
                 </div>
                 <div class="menu-item">
                     <img src="./assets/images/burger_0 (1).avif" alt="Snack">
                     <div class="menu-item-info">
-                        <h4>Beyond meat burger</h4>
+                        <h4>Beyond Meat Burger</h4>
                         <p>Taking all the headlines for the last few years, the beyond-meat burger has been one of those food innovations that has helped shift the dial on how people perceive plant-based food in general. Try it out and see for yourself.</p>
                         <p><strong>$2.75</strong></p>
+                        <button class="btn btn-success order-btn" data-name="Beyond Meat Burger" data-price="$3.00">Order Now</button>
                     </div>
                 </div>
                 <div class="menu-item">
                     <img src="./assets/images/chickpea_burger.avif" alt="Snack">
                     <div class="menu-item-info">
-                        <h4>Bean burger</h4>
+                        <h4>Bean Burger</h4>
                         <p>The longtime veggie burger staple, the bean burger can be explored once more by using different pulses for different flavours in your bean burger patty. Try this ultimate chickpea burger recipe, which relies on middle-eastern falafel recipes, for a satisfying vegetarian burger. </p>
-                        <p><strong>$2.75</strong></p>
+                        <p><strong>$2.75</strong></p> <button class="btn btn-success order-btn" data-name="Bean Burger" data-price="$3.00">Order Now</button>
                     </div>
                 </div>
 
@@ -220,6 +242,73 @@
     <footer>
         <p>&copy; 2024 Starbucks. All rights reserved.</p>
     </footer>
+
+     <!-- Order Form Modal -->
+     <div class="modal fade" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="orderModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="orderModalLabel">Order Form</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="itemName">Item Name</label>
+                            <input type="text" class="form-control" id="itemName" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="itemPrice">Item Price</label>
+                            <input type="text" class="form-control" id="itemPrice" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="customerName">Your Name</label>
+                            <input type="text" class="form-control" id="customerName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="customerEmail">Your Email</label>
+                            <input type="email" class="form-control" id="customerEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="customerPhone">Your Phone</label>
+                            <input type="text" class="form-control" id="customerPhone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="customerAddress">Your Address</label>
+                            <textarea class="form-control" id="customerAddress" rows="3" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit Order</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            // Filter menu items
+            $('.filter-button').click(function(){
+                var category = $(this).attr('data-category');
+                if(category == 'all'){
+                    $('.menu-category').show();
+                } else {
+                    $('.menu-category').hide();
+                    $('.' + category).show();
+                }
+            });
+
+            // Show order modal
+            $('.order-btn').click(function(){
+                var itemName = $(this).data('name');
+                var itemPrice = $(this).data('price');
+                $('#itemName').val(itemName);
+                $('#itemPrice').val(itemPrice);
+                $('#orderModal').modal('show');
+            });
+        });
+    </script>
 
     <script src="./assets/js/script.js"></script>
 </body>
