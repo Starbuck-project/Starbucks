@@ -3,9 +3,7 @@
     --primary-color: #fce138;
     --secondary-color: #1c7882; 
     --tertiary-color: #238363;
-    --other-color: white 
-
-
+    --other-color: white;
 }
 
 /* Universal selector */
@@ -21,8 +19,8 @@ body {
   }
 
 header {
-    background-color: #238363;
-    color: white;
+    background-color: var(--tertiary-color);
+    color: var(--other-color);
     padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
@@ -46,7 +44,7 @@ nav ul {
 }
 
 nav a {
-    color: white;
+    color: var(--other-color);
     text-decoration: none;
     font-size: 1.1rem;
 }
@@ -64,7 +62,7 @@ main {
 #home {
     margin-bottom: 2rem;
     padding: 6rem;
-    background-color: white;
+    background-color: var(--other-color);
     color: #0dce57;
     background-image: url(https://stories.starbucks.com/uploads/2022/09/Starbucks-Virtual-Backgrounds-PikePlace.jpg);
     border-radius: 10px;
@@ -118,7 +116,7 @@ section {
 
 .products {
     flex: 4;
-    background-color: #fff;
+    background-color: var(--other-color);
     margin: 32px;
     padding: 32px;
     display: flex;
@@ -152,7 +150,7 @@ section {
     font-size: 1.1rem;
 }
 
-/* MEET THE COFE START */
+/* SPECIAL PROMOTION START */
 .coffees {
     width: 100%;
     margin: 0 auto;
@@ -190,7 +188,7 @@ section {
   .coffee-bio p {
     font-size: 17px;
   }
-  /* COFE STYLES END */
+  /* SPECIAL PROMOTION END */
 
 /* REACH OUT STYLE START */
 .contact {
@@ -205,7 +203,7 @@ color: var(--primary-color);
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    color: white;
+    color:var(--other-color);
 }
 
 .contact-info > * {
@@ -271,7 +269,7 @@ color: var(--primary-color);
 
 footer {
     background-color: var(--tertiary-color);
-    color: #fff;
+    color: var(--other-color);
     padding: 20px;
     text-align: center;
   }
@@ -287,12 +285,12 @@ footer {
   }
 
   footer a {
-    color: #fff;
+    color: var(--other-color);
     text-decoration: underline;
   }
 
   footer a:hover {
-    color: #f8f9fa;
+    color: var(--primary-color);
   }
 
 /* Media query for smaller desktop screens and smaller */
