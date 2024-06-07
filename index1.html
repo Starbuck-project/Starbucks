@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Order Form</h1>
+        <form id="orderForm" action="/submit-order" method="POST">
+            <div class="form-group">
+                <label for="itemName">Item Name</label>
+                <input type="text" class="form-control" id="itemName" name="itemName" readonly value="Example Item">
+            </div>
+            <div class="form-group">
+                <label for="itemPrice">Item Price</label>
+                <input type="text" class="form-control" id="itemPrice" name="itemPrice" readonly value="$100">
+            </div>
+            <div class="form-group">
+                <label for="customerName">Your Name</label>
+                <input type="text" class="form-control" id="customerName" name="customerName" required>
+            </div>
+            <div class="form-group">
+                <label for="customerEmail">Your Email</label>
+                <input type="email" class="form-control" id="customerEmail" name="customerEmail" required>
+            </div>
+            <div class="form-group">
+                <label for="customerPhone">Your Phone</label>
+                <input type="text" class="form-control" id="customerPhone" name="customerPhone" required>
+            </div>
+            <div class="form-group">
+                <label for="quantity">How much do you want?</label>
+                <input type="text" class="form-control" id="quantity" name="quantity" required>
+            </div>
+            <div class="form-group">
+                <label for="customerAddress">Your Address</label>
+                <textarea class="form-control" id="customerAddress" name="customerAddress" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit Order</button>
+        </form>
+    </div>
+</body>
+</html>
