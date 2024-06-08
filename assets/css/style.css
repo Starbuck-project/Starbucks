@@ -68,7 +68,7 @@ main {
     margin-bottom: 2rem;
     padding: 6rem;
     background-color: var(--other-color); /* Background color */
-    color: var(--tertiary-color); /* Text color */
+    color: var(--primary-color); /* Text color */
     background-image: url(https://stories.starbucks.com/uploads/2022/09/Starbucks-Virtual-Backgrounds-PikePlace.jpg);
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
