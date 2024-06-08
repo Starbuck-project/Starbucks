@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy One, Gift One Form</title>
+    <link rel="stylesheet" href="assets/css/buyone.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <header class="main-header">
+        <section id="home" class="text-center p-5">
+            <h1>Welcome to Starbucks</h1>
+            <p>Your favorite coffee shop.</p>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#buy-gift-modal">Buy One, Gift One</button>
+        </section>
+       
+    </header>
+   
+    <main>
+        <section class="card">
+          <header>T-shirt</header>
+          <img src="./assets/images/T-shirt.jpeg" alt="T-shirt" />
+          <p>Price: $100</p>
+        </section>
+        <section class="card">
+          <header>T-shirt</header>
+          <img src="./assets/images/T-shirt1.jpeg" alt="T-shirt" />
+          <p>Price: $150</p>
+        </section>
+        <section class="card">
+          <header>Mug</header>
+          <img src="./assets/images/mug.jpeg" alt="Mug" />
+          <p>Price: $30</p>
+        </section>
+        <section class="card">
+          <header>cup</header>
+          <img src="./assets/images/cup.webp" alt="Cup" />
+          <p>Price: $10</p>
+        </section>
+        <section class="card">
+          <header>Pen</header>
+          <img src="./assets/images/pen.webp" alt="pen" />
+          <p>Price: $5</p>
+        </section>
+        <section class="card">
+          <header>Bag</header>
+          <img src="./assets/images/bag.jpg" alt="bag" />
+          <p>Price: $3</p>
+        </section>
+      </main>
+
+    <!-- Modal -->
+    <div class="modal fade" id="buy-gift-modal" tabindex="-1" role="dialog" aria-labelledby="buy-gift-modal"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="myModalTitle">Buy One, Gift One Form</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="buy-gift-form">
+                        <div class="form-group">
+                            <label for="buyerName">Buyer's Name</label>
+                            <input type="text" class="form-control" id="buyerName" placeholder="Enter your name"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="buyerEmail">Buyer's Email</label>
+                            <input type="email" class="form-control" id="buyerEmail" placeholder="Enter your email"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="buyerPhone">Buyer's Phone Number</label>
+                            <input type="tel" class="form-control" id="buyerPhone"
+                                placeholder="Enter your phone number" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="item">Select Item</label>
+                            <select class="form-control" id="item" required>
+                                <option value="" disabled selected>Select an item</option>
+                                <option value="Coffee Mug" data-price="10">Coffee Mug - $10</option>
+                                <option value="Tote Bag" data-price="15">Tote Bag - $15</option>
+                                <option value="Pen" data-price="5">Pen - $5</option>
+                                <option value="T-shirt" data-price="20">T-shirt - $20</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="giftName">Recipient's Name</label>
+                            <input type="text" class="form-control" id="giftName"
+                                placeholder="Enter recipient's name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="giftEmail">Recipient's Email</label>
+                            <input type="email" class="form-control" id="giftEmail"
+                                placeholder="Enter recipient's email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="giftMessage">Personal Message</label>
+                            <textarea class="form-control" id="giftMessage" rows="3"
+                                placeholder="Enter a personal message"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $('#buy-gift-form').on('submit', function (e) {
+                e.preventDefault();
+
+                // Collect form data
+                var buyerName = $('#buyerName').val();
+                var buyerEmail = $('#buyerEmail').val();
+                var buyerPhone = $('#buyerPhone').val();
+                var item = $('#item').val();
+                var itemPrice = $('#item option:selected').data('price');
+                var giftName = $('#giftName').val();
+                var giftEmail = $('#giftEmail').val();
+                var giftMessage = $('#giftMessage').val();
+
+                // For demonstration purposes, we'll just log the data to the console
+                console.log({
+                    buyerName: buyerName,
+                    buyerEmail: buyerEmail,
+                    buyerPhone: buyerPhone,
+                    item: item,
+                    itemPrice: itemPrice,
+                    giftName: giftName,
+                    giftEmail: giftEmail,
+                    giftMessage: giftMessage
+                });
+
+                // Reset the form after submission
+                $('#buy-gift-form')[0].reset();
+
+                // Optionally show a success message to the user
+                alert('Form submitted successfully!');
+            });
+        });
+    </script>
+</body>
+
+</html>
