@@ -17,7 +17,7 @@ main {
     display: flex;
     justify-content: space-between;
     padding: 40px;
-    background: #13293d;
+    background: #36886e;
     color: #fff;
   }
 
@@ -40,7 +40,7 @@ main {
 
 .card header {
     padding: 20px;
-    background: #13293d;
+    background: #36b89e;
     color: #fff;
   }
 
