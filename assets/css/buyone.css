@@ -14,11 +14,12 @@ main {
   }
 
 .main-header {
-    display: flex;
-    justify-content: space-between;
-    padding: 40px;
-    background: #31e4ed;
+    /* display: flex;  */
+    /* justify-content: space-between; */
+    padding: 5px 10px;
+    background: #1dd9b3;
     color: #fff;
+    text-align: center;
   }
 
   .gift {
