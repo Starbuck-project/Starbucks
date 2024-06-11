@@ -65,4 +65,5 @@ This code is structured for processing orders and notifying the owner via email,
 ## Main Challenge 
 - **z-index 999**
 - **git page link**
-- **link in html**
+- **link error in html**
+- **Localstorage error**
