@@ -20,9 +20,7 @@ This HTML document creates a basic structure for a Starbucks clone website, incl
 
 - **Footer:**
   - Offers a closing message, a link to the privacy policy, and copyright information.
-
-## Script
-Links to an external JavaScript file for additional functionality.
+  - Links to an external JavaScript file for additional functionality.
 
 ##  CSS Code
 
@@ -62,3 +60,8 @@ This code snippet demonstrates a Node.js application using Express.js for handli
   - Sets the server to listen on port 3000 or a specified environment variable.
 
 This code is structured for processing orders and notifying the owner via email, showcasing how to integrate email functionality into a Node.js application.
+
+
+## Main Challenge 
+- **z-index 999**
+- **git page link**
