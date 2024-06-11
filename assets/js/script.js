@@ -8,20 +8,30 @@ $(document).ready(function() {
   });
 
 
-  document.getElementById('contact-form').addEventListener('submit', function(event) {
+  document.getElementById('orderForm').addEventListener('submit', function(event) {
     event.preventDefault();
     
     // Get the values from the form fields
-    const name = document.getElementById('contact-name').value;
-    const message = document.getElementById('contact-message').value;
+    const orderName = document.getElementById('itemName').value;
+    const orderPrice = document.getElementById('itemPrice').value;
+    const cusName = document.getElementById('customerName').value;
+    const cusEmail = document.getElementById('customerEmail').value;
+    const cusPhone = document.getElementById('customerPhone').value;
+    const orderNumber = document.getElementById('quantity').value;
+    const cusAddress = document.getElementById('customerAddress').value;
     
     // Save the values to localStorage
-    localStorage.setItem('contactName', name);
-    localStorage.setItem('contactMessage', message);
+    localStorage.setItem('itemName', orderName);
+    localStorage.setItem('itemPrice', orderPrice);
+    localStorage.setItem('customerName', cusName);
+    localStorage.setItem('customerEmail', cusEmail);
+    localStorage.setItem('customerPhone', cusPhone);
+    localStorage.setItem('quantity', orderNumber);
+    localStorage.setItem('customerAddress', cusAddress);
     
     // Optionally, clear the form fields
-    document.getElementById('contact-form').reset();
+    document.getElementById('orderForm').reset();
     
-    alert('Your message has been saved!');
+    alert('Your order is completed. Your message has been saved!');
 });
 
