@@ -1,4 +1,4 @@
-Global Styles
+/* Global Styles */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -41,7 +41,7 @@ nav a {
 }
 
 nav a:hover {
-    text-decoration: underline;
+    text-decoration: underline  white;
 }
 
 main {

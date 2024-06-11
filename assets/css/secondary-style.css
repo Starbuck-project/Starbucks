@@ -7,6 +7,40 @@
 }
 /* Hero Style End */
 
+/* header */
+header {
+    background-color: #00704A;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+nav a:hover {
+    text-decoration: underline white;
+}
+
 /* Page title */
 .page-title {
     color: #fce138;
@@ -20,7 +54,7 @@
 
 .secondary-content {
     width: 80%;
-    color: #024e76;
+    color: #238363;
     font-size: 25px;
     margin: 0 auto;
 }
