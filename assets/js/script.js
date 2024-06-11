@@ -35,3 +35,33 @@ $(document).ready(function() {
     alert('Your order is completed. Your message has been saved!');
 });
 
+
+// Function to contact form submission
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  // Get form data
+  const name = document.getElementById('contact-name').value;
+  const message = document.getElementById('contact-message').value;
+
+  // Check if data is not empty
+  if (name && message) {
+      // Create an object to store the contact information
+      const contactInfo = {
+          name: name,
+          message: message,
+          timestamp: new Date().toISOString()
+      };
+
+      // Save to localStorage
+      localStorage.setItem('contactInfo', JSON.stringify(contactInfo));
+
+      // Optionally, display a success message
+      alert('Your message has been saved. Thank you for contacting us!');
+
+      // Clear form fields
+      document.getElementById('contact-form').reset();
+  } else {
+      alert('Please fill out both fields.');
+  }
+});
