@@ -1,17 +1,21 @@
-// order comfirm
-$(document).ready(function() {
-    $(".order-btn").click(function() {
+      // Document ready function to ensure the DOM is fully loaded before executing scripts
+      $(document).ready(function() {
+      // Attach click event handler to elements with the class 'order-btn'
+      $(".order-btn").click(function() {
+      // Retrieve the item name and price from the closest parent element with class 'menu-item'
       var itemName = $(this).closest('.menu-item').find('h4').text();
       var itemPrice = $(this).closest('.menu-item').find('strong').text();
+      // Display an alert to confirm the order with the item name and price
       alert("Confirm your order item. "+"You ordered : " + itemName + " for " + itemPrice + ".");
     });
   });
 
-
-  document.getElementById('orderForm').addEventListener('submit', function(event) {
+    // Add submit event listener to the form with the ID 'orderForm'
+    document.getElementById('orderForm').addEventListener('submit', function(event) {
+    // Prevent the default form submission behavior
     event.preventDefault();
     
-    // Get the values from the form fields
+    // Retrieve form input values
     const orderName = document.getElementById('itemName').value;
     const orderPrice = document.getElementById('itemPrice').value;
     const cusName = document.getElementById('customerName').value;
@@ -20,7 +24,7 @@ $(document).ready(function() {
     const orderNumber = document.getElementById('quantity').value;
     const cusAddress = document.getElementById('customerAddress').value;
     
-    // Save the values to localStorage
+    // Store the form data in localStorage
     localStorage.setItem('itemName', orderName);
     localStorage.setItem('itemPrice', orderPrice);
     localStorage.setItem('customerName', cusName);
@@ -29,9 +33,9 @@ $(document).ready(function() {
     localStorage.setItem('quantity', orderNumber);
     localStorage.setItem('customerAddress', cusAddress);
     
-    // Optionally, clear the form fields
+    // Reset the form after submission
     document.getElementById('orderForm').reset();
-    
+    // Display an alert indicating the order is completed and data has been saved
     alert('Your order is completed. Your message has been saved!');
 });
 
