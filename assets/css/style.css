@@ -18,43 +18,7 @@ body {
     color: var(--tertiary-color); /* Text color */
     font-family: Helvetica, Arial, sans-serif; /* Font stack */
   }
-
-/* Header Styling */
-header {
-    background-color: var(--tertiary-color); /* Header background */
-    color: var(--other-color);
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-header .logo img {
-    height: 50px; /* Logo height */
-}
-
-/* Navigation Styling */
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
-    font-size: 3rem;
-    font-weight: bold;
-}
-
-nav a {
-    color: var(--other-color); /* Link color */
-    text-decoration: none;
-    font-size: 1.1rem;
-}
-
-nav a:hover {
-    text-decoration: underline; /* Hover effect for links */
-}
+ 
 
 /* Main Content Styling */
 main {
@@ -120,6 +84,7 @@ section {
 .menu-item img {
     max-width: 100%;
     border-radius: 10px;
+    background-color:#fafafa ;
 }
 
 /* Products Section Styling */

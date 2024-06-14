@@ -16,7 +16,7 @@ let products = [
     {
         id: 1,
         name: 'PRODUCT NAME 1',
-        image: 'Birthday Cake Frappe Starbucks Cake Made Jeanette Labella Jlabella Cakes Cake - birijus_com.jpeg',
+        image: 'Bag1.jpeg',
         price: 12000
     },
     {

@@ -69,3 +69,30 @@ document.getElementById('contact-form').addEventListener('submit', function(even
       alert('Please fill out both fields.');
   }
 });
+
+$(document).ready(function() {
+  $('#login-form').submit(function(event) {
+      event.preventDefault();
+      var email = $('#login-email').val();
+      var password = $('#login-password').val();
+      
+      // Simulate login process (you can replace this with actual login logic)
+      if(email === "user@example.com" && password === "password") {
+          alert("Login successful!");
+          $('#loginModal').modal('hide');
+          $('#login-form')[0].reset();
+          // Change login link to logout
+          $('nav ul').append('<li><a href="#" id="logout">Logout</a></li>');
+          $('nav ul li:contains("Login")').hide();
+      } else {
+          alert("Invalid email or password. Please try again.");
+      }
+  });
+
+  $(document).on('click', '#logout', function() {
+      // Simulate logout process
+      alert("Logout successful!");
+      $(this).parent().remove();
+      $('nav ul li:contains("Login")').show();
+  });
+});
