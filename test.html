@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starbucks Promotion</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .card {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .card img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="home">
+        <a href="./index.html">Welcome to Starbucks</a>
+    </div>
+    <p>Your favorite coffee shop.</p>
+    <button class="btn btn-primary" data-toggle="modal" data-target="#buy-gift-modal">Buy One, Get One</button>
+</header>
+
+<main class="gift">
+    <section class="card">
+        <header>T-shirt</header>
+        <img src="./assets/images/T-shirt.jpeg" alt="T-Shirt" />
+        <p>Price: $20</p>
+    </section>
+    <section class="card">
+        <header>T-shirt</header>
+        <img src="./assets/images/T-shirt1.jpeg" alt="T-Shirt" />
+        <p>Price: $20</p>
+    </section>
+    <section class="card">
+        <header>Hat</header>
+        <img src="./assets/images/hat1.jpg" alt="Hat" />
+        <p>Price: $5</p>
+    </section>
+    <section class="card">
+        <header>Cup</header>
+        <img src="./assets/images/cup.webp" alt="Cup" />
+        <p>Price: $10</p>
+    </section>
+    <section class="card">
+        <header>Pen</header>
+        <img src="./assets/images/pen.webp" alt="Pen" />
+        <p>Price: $5</p>
+    </section>
+    <section class="card">
+        <header>Bag</header>
+        <img src="./assets/images/bag.jpg" alt="Bag" />
+        <p>Price: $10</p>
+    </section>
+</main>
+
+<!-- Modal -->
+<div class="modal fade" id="buy-gift-modal" tabindex="-1" role="dialog" aria-labelledby="buyGiftModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="buyGiftModalLabel">Special Promotion</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Buy one item and get another one of equal or lesser value for free! Visit our store today to take advantage of this limited-time offer.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="shop-now-btn">Shop Now</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function() {
+        // Show promotion modal on button click
+        $('#buy-gift-modal').on('show.bs.modal', function (event) {
+            var modal = $(this);
+            modal.find('.modal-body').text('Buy one item and get another one of equal or lesser value for free! Visit our store today to take advantage of this limited-time offer.');
+        });
+
+        // Redirect to shop page on 'Shop Now' button click
+        $('#shop-now-btn').click(function() {
+            window.location.href = './shop.html';
+        });
+
+        // Conditional logic for 'Buy One, Get One' promotion
+        var items = document.querySelectorAll('.card');
+        var promoApplied = false;
+
+        items.forEach(function(item) {
+            var price = parseFloat(item.querySelector('p').textContent.replace('Price: $', ''));
+
+            if (price <= 10 && !promoApplied) {
+                item.querySelector('p').innerHTML += '<br><span class="badge badge-success">BOGO Eligible</span>';
+                promoApplied = true;  // Ensure promotion applies to only one item
+            }
+        });
+    });
+</script>
+</body>
+</html>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buy One, Get One Form</title>
+    <title>Starbucks Promotion</title>
     <link rel="stylesheet" href="assets/css/buyone.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -16,14 +16,26 @@
 
 <body>
     <header class="main-header">
-        <section id="home" class="text-center p-5">
-           <!-- <h1>Welcome to Starbucks</h1>  -->
-           <div class="home"> 
-            <a href="./index.html">Welcome to Starbucks</a>
-           </div>
-            <p>Your favorite coffee shop.</p>
-            <button class="btn btn-primary" data-toggle="modal" data-target="#buy-gift-modal">Buy One, Get One</button>
-        </section>
+        <div class="container mt-5">
+            <h1 class="text-center">Starbucks Promotion</h1>
+            <form id="promotionForm">
+                <div class="form-group">
+                    <label for="product">Select Product</label>
+                    <select class="form-control" id="product" required>
+                        <option value="">Choose...</option>
+                        <option value="coffee">Coffee</option>
+                        <option value="tea">Tea</option>
+                        <option value="mug">Mug</option>
+                    </select>
+                </div>
+                <div class="form-group" id="promotionGroup" style="display: none;">
+                    <label for="promotion">Promotion Code</label>
+                    <input type="text" class="form-control" id="promotion">
+                    <small id="promotionHelp" class="form-text text-muted"></small>
+                </div>
+                <button type="button" id="applyPromotion" class="btn btn-primary">Apply Promotion</button>
+            </form>
+        </div>
        
     </header>
    
@@ -60,107 +72,75 @@
         </section>
       </main>
 
-    Modal
-    <div class="modal fade" id="buy-gift-modal" tabindex="-1" role="dialog" aria-labelledby="buy-gift-modal"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="myModalTitle">Buy One, Get One Form</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form id="buy-gift-form">
-                        <div class="form-group">
-                            <label for="buyerName">Buyer's Name</label>
-                            <input type="text" class="form-control" id="buyerName" placeholder="Enter your name"
-                                required>
-                        </div>
-                        <div class="form-group">
-                            <label for="buyerEmail">Buyer's Email</label>
-                            <input type="email" class="form-control" id="buyerEmail" placeholder="Enter your email"
-                                required>
-                        </div>
-                        <div class="form-group">
-                            <label for="buyerPhone">Buyer's Phone Number</label>
-                            <input type="tel" class="form-control" id="buyerPhone"
-                                placeholder="Enter your phone number" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="item">Select Item</label>
-                            <select class="form-control" id="item" required>
-                                <option value="" disabled selected>Select an item</option>
-                                <option value="Coffee Mug" data-price="5">Coffee Mug - $5</option>
-                                <option value="Tote Bag" data-price="20">Tote Bag - $20</option>
-                                <option value="Pen" data-price="5">Pen - $5</option>
-                                <option value="T-shirt" data-price="20">T-shirt - $20</option>
-                                <option value="Pen&Book" data-price="5">Book - $5</option>
-                                <option value="Vas" data-price="10">vas - $10</option>
-                                <option value="Hat" data-price="5">Hat - $5</option>
-                                <option value="Towel" data-price="10">Towel - $10</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="giftName">Recipient's Name</label>
-                            <input type="text" class="form-control" id="giftName"
-                                placeholder="Enter recipient's name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="giftEmail">Recipient's Email</label>
-                            <input type="email" class="form-control" id="giftEmail"
-                                placeholder="Enter recipient's email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="giftMessage">Personal Message</label>
-                            <textarea class="form-control" id="giftMessage" rows="3"
-                                placeholder="Enter a personal message"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-block">Submit</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <script>
-        $(document).ready(function () {
-            $('#buy-gift-form').on('submit', function (e) {
-                e.preventDefault();
-
-                // Collect form data
-                var buyerName = $('#buyerName').val();
-                var buyerEmail = $('#buyerEmail').val();
-                var buyerPhone = $('#buyerPhone').val();
-                var item = $('#item').val();
-                var itemPrice = $('#item option:selected').data('price');
-                var giftName = $('#giftName').val();
-                var giftEmail = $('#giftEmail').val();
-                var giftMessage = $('#giftMessage').val();
-
-                // For demonstration purposes, we'll just log the data to the console
-                console.log({
-                    buyerName: buyerName,
-                    buyerEmail: buyerEmail,
-                    buyerPhone: buyerPhone,
-                    item: item,
-                    itemPrice: itemPrice,
-                    giftName: giftName,
-                    giftEmail: giftEmail,
-                    giftMessage: giftMessage
-                });
-
-                // Reset the form after submission
-                $('#buy-gift-form')[0].reset();
-
-                // Optionally show a success message to the user
-                alert('Form submitted successfully!');
-            });
-        });
-
+        $(document).ready(function() {
+    // Handle product selection change
+    $('#product').change(function() {
+        const product = $(this).val();
+        const promotionGroup = $('#promotionGroup');
+        const promotionHelp = $('#promotionHelp');
         
+        // Show promotion input and message based on selected product
+        if (product === "coffee") {
+            promotionGroup.show();
+            promotionHelp.text('Enter code COFFEE20 for 20% off.');
+        } else if (product === "tea") {
+            promotionGroup.show();
+            promotionHelp.text('Enter code TEA10 for 10% off.');
+        } else if (product === "mug") {
+            promotionGroup.show();
+            promotionHelp.text('Enter code MUG5 for $5 off.');
+        } else {
+            promotionGroup.hide();
+            promotionHelp.text('');
+        }
+    });
+
+    // Handle promotion button click
+    $('#applyPromotion').click(function() {
+        const product = $('#product').val();
+        const promotionCode = $('#promotion').val().trim();
+        let validCode = false;
+        let discountMessage = '';
+
+        // Validate promotion code based on selected product
+        switch(product) {
+            case 'coffee':
+                if (promotionCode === 'COFFEE20') {
+                    validCode = true;
+                    discountMessage = 'You have received 20% off your coffee!';
+                }
+                break;
+            case 'tea':
+                if (promotionCode === 'TEA10') {
+                    validCode = true;
+                    discountMessage = 'You have received 10% off your tea!';
+                }
+                break;
+            case 'mug':
+                if (promotionCode === 'MUG5') {
+                    validCode = true;
+                    discountMessage = 'You have received $5 off your mug!';
+                }
+                break;
+            default:
+                validCode = false;
+        }
+
+        // Display appropriate message based on validation
+        if (validCode) {
+            alert(discountMessage);
+        } else {
+            alert('Invalid promotion code. Please try again.');
+        }
+    });
+});
     </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="promotion.js"></script>
 </body>
 
 </html>
