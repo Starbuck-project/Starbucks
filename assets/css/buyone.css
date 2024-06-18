@@ -25,7 +25,12 @@ main {
     color: #fff;
     text-align: center;
   }
-
+.promotion {
+  color: #fff;
+}
+.promotion:hover {
+  color:#fff;
+}
   .gift {
     display: flex;
     flex-wrap: wrap;
