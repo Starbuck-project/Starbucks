@@ -24,6 +24,7 @@
                     <label for="product">Select Product</label>
                     <select class="form-control" id="product" required>
                         <option value="">Choose...</option>
+                        <option value="T-shart">T-shart</option>
                         <option value="coffee">Coffee</option>
                         <option value="tea">Tea</option>
                         <option value="mug">Mug</option>
@@ -107,6 +108,10 @@
         } else if (product === "mug") {
             promotionGroup.show();
             promotionHelp.text('Enter code MUG5 for $5 off.');
+        }
+        else if (product === "T-shart") {
+            promotionGroup.show();
+            promotionHelp.text('Enter code T-SHART15 for $15 off.');
         } else {
             promotionGroup.hide();
             promotionHelp.text('');

@@ -15,6 +15,9 @@ $(document).ready(function() {
         } else if (product === "mug") {
             promotionGroup.show();
             promotionHelp.text('Enter code MUG5 for $5 off.');
+        } else if (product === "T-shart") {
+            promotionGroup.show();
+            promotionHelp.text('Enter code T-shart for $15 off.');
         } else {
             promotionGroup.hide();
             promotionHelp.text('');
@@ -40,6 +43,12 @@ $(document).ready(function() {
                 if (promotionCode === 'TEA10') {
                     validCode = true;
                     discountMessage = 'You have received 10% off your tea!';
+                }
+                break;
+            case 'T-shart':
+                if (promotionCode === 'T-SHART15') {
+                    validCode = true;
+                    discountMessage = 'You have received 15% off your T-shart!';
                 }
                 break;
             case 'mug':
