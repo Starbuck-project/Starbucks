@@ -74,6 +74,60 @@ let products = [
         image: 'strawberries-cream-frappuccino.png',
         price: 15000
     },
+    {
+        id: 10,
+        name: 'Macchiato',
+        image: 'Macchiato.png',
+        price: 13500
+    },
+    {
+        id: 11,
+        name: 'Americano',
+        image: 'Americano.jpeg',
+        price: 9000
+    },
+    {
+        id: 12,
+        name: 'Doppio',
+        image: 'Doppio.jpeg',
+        price: 13500
+    },
+    {
+        id: 13,
+        name: 'Yellow Tea',
+        image: 'yellowtea_700x.jpg',
+        price: 13500
+    },
+    {
+        id: 14,
+        name: 'Oolong Tea',
+        image: 'Oolong tea.webp',
+        price: 9000
+    },
+    {
+        id: 15,
+        name: 'Black Tea',
+        image: 'Black tea.jpeg',
+        price: 15000
+    },
+    {
+        id: 16,
+        name: 'Cheese burger',
+        image: 'cheese-burger-ricetta.jpg.webp',
+        price: 13500
+    },
+    {
+        id: 17,
+        name: 'Chickpea burger',
+        image: 'chickpea_burger.avif',
+        price: 9000
+    },
+    {
+        id: 18,
+        name: 'burger.avif',
+        image: 'burger.avif',
+        price: 15000
+    },
 ];
 let listCards  = [];
 function initApp(){
@@ -130,3 +184,69 @@ function changeQuantity(key, quantity){
     }
     reloadCard();
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    const orderButton = document.querySelector('.closeShopping');
+    const orderFormModal = document.getElementById('orderFormModal');
+    const orderForm = document.getElementById('orderForm');
+    const closeOrderFormButton = document.getElementById('closeOrderForm');
+    const shoppingCart = document.querySelector('.listCard');
+    const cartQuantity = document.querySelector('.shopping .quantity');
+    const totalAmount = document.querySelector('.total');
+    const cancelButton = document.querySelector('.cancle');
+    const formCancelButton = document.getElementById('formCancelButton');
+
+    // Open order form modal
+    orderButton.addEventListener('click', () => {
+        orderFormModal.style.display = 'block';
+    });
+
+    // Close order form modal
+    closeOrderFormButton.addEventListener('click', () => {
+        clearCart();
+        orderFormModal.style.display = 'none';
+    });
+
+    // Submit order form
+    orderForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const formData = new FormData(orderForm);
+        const formObject = {};
+        formData.forEach((value, key) => {
+            formObject[key] = value;
+        });
+        localStorage.setItem('order', JSON.stringify(formObject));
+        alert('Order placed successfully!');
+        
+        // Clear shopping cart
+        clearCart();
+        
+        // Close the order form modal
+        orderFormModal.style.display = 'none';
+    });
+
+    // Clear cart on cancel button click
+    cancelButton.addEventListener('click', () => {
+        clearCart();
+    });
+
+    // Clear cart on form cancel button click
+    formCancelButton.addEventListener('click', () => {
+        clearCart();
+        orderFormModal.style.display = 'none';
+    });
+
+    // Function to clear the shopping cart
+    function clearCart() {
+        shoppingCart.innerHTML = '';
+        cartQuantity.textContent = '0';
+        totalAmount.textContent = '0';
+    }
+
+    // Close modal when clicking outside of the form
+    window.onclick = function(event) {
+        if (event.target == orderFormModal) {
+            orderFormModal.style.display = 'none';
+        }
+    };
+});
