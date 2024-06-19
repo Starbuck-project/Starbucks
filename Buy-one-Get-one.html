@@ -11,34 +11,39 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <style>
+        #promotionHelp {
+            color: white; /* Set the color of the promotion help text to white */
+        }
     </style>
 </head>
 
 <body>
     <header class="main-header">
         <div class="container mt-5">
-            
             <h1 class="text-center"> <a class="promotion" href="./index.html">Starbucks Promotion</a></h1>
             <form id="promotionForm">
                 <div class="form-group">
                     <label for="product">Select Product</label>
                     <select class="form-control" id="product" required>
                         <option value="">Choose...</option>
-                        <option value="T-shart">T-shart</option>
                         <option value="coffee">Coffee</option>
                         <option value="tea">Tea</option>
                         <option value="mug">Mug</option>
+                        <option value="tshirt">T-shirt</option>
+                        <option value="sweater">Sweater</option>
+                        <option value="hat">Hat</option>
+                        <option value="pajamas">Pajamas</option>
+                        <option value="bag">Bag</option>
                     </select>
                 </div>
                 <div class="form-group" id="promotionGroup" style="display: none;">
                     <label for="promotion">Promotion Code</label>
                     <input type="text" class="form-control" id="promotion">
-                    <small id="promotionHelp" class="form-text text-muted"></small>
+                    <small id="promotionHelp" class="form-text text-light"></small>
                 </div>
                 <button type="button" id="applyPromotion" class="btn btn-light">Apply Promotion</button>
             </form>
         </div>
-       
     </header>
    
     <main class="gift">
@@ -89,74 +94,125 @@
           </section>
       </main>
 
-
     <script>
         $(document).ready(function() {
-    // Handle product selection change
-    $('#product').change(function() {
-        const product = $(this).val();
-        const promotionGroup = $('#promotionGroup');
-        const promotionHelp = $('#promotionHelp');
-        
-        // Show promotion input and message based on selected product
-        if (product === "coffee") {
-            promotionGroup.show();
-            promotionHelp.text('Enter code COFFEE20 for 20% off.');
-        } else if (product === "tea") {
-            promotionGroup.show();
-            promotionHelp.text('Enter code TEA10 for 10% off.');
-        } else if (product === "mug") {
-            promotionGroup.show();
-            promotionHelp.text('Enter code MUG5 for $5 off.');
-        }
-        else if (product === "T-shart") {
-            promotionGroup.show();
-            promotionHelp.text('Enter code T-SHART15 for $15 off.');
-        } else {
-            promotionGroup.hide();
-            promotionHelp.text('');
-        }
-    });
-
-    // Handle promotion button click
-    $('#applyPromotion').click(function() {
-        const product = $('#product').val();
-        const promotionCode = $('#promotion').val().trim();
-        let validCode = false;
-        let discountMessage = '';
-
-        // Validate promotion code based on selected product
-        switch(product) {
-            case 'coffee':
-                if (promotionCode === 'COFFEE20') {
-                    validCode = true;
-                    discountMessage = 'You have received 20% off your coffee!';
+            // Handle product selection change
+            $('#product').change(function() {
+                const product = $(this).val();
+                const promotionGroup = $('#promotionGroup');
+                const promotionHelp = $('#promotionHelp');
+                
+                // Show promotion input and message based on selected product
+                switch(product) {
+                    case 'coffee':
+                        promotionGroup.show();
+                        promotionHelp.text('Enter code COFFEE20 for 20% off.');
+                        break;
+                    case 'tea':
+                        promotionGroup.show();
+                        promotionHelp.text('Enter code TEA10 for 10% off.');
+                        break;
+                    case 'mug':
+                        promotionGroup.show();
+                        promotionHelp.text('Enter code MUG5 for $5 off.');
+                        break;
+                    case 'tshirt':
+                        promotionGroup.show();
+                        promotionHelp.text('Enter code TSHIRT10 for 10% off.');
+                        break;
+                    case 'sweater':
+                        promotionGroup.show();
+                        promotionHelp.text('Enter code SWEATER15 for 15% off.');
+                        break;
+                    case 'hat':
+                        promotionGroup.show();
+                        promotionHelp.text('Enter code HAT5 for $5 off.');
+                        break;
+                    case 'pajamas':
+                        promotionGroup.show();
+                        promotionHelp.text('Enter code PAJAMAS20 for 20% off.');
+                        break;
+                    case 'bag':
+                        promotionGroup.show();
+                        promotionHelp.text('Enter code BAG10 for 10% off.');
+                        break;
+                    default:
+                        promotionGroup.hide();
+                        promotionHelp.text('');
                 }
-                break;
-            case 'tea':
-                if (promotionCode === 'TEA10') {
-                    validCode = true;
-                    discountMessage = 'You have received 10% off your tea!';
-                }
-                break;
-            case 'mug':
-                if (promotionCode === 'MUG5') {
-                    validCode = true;
-                    discountMessage = 'You have received $5 off your mug!';
-                }
-                break;
-            default:
-                validCode = false;
-        }
+            });
 
-        // Display appropriate message based on validation
-        if (validCode) {
-            alert(discountMessage);
-        } else {
-            alert('Invalid promotion code. Please try again.');
-        }
-    });
-});
+            // Handle promotion button click
+            $('#applyPromotion').click(function() {
+                const product = $('#product').val();
+                const promotionCode = $('#promotion').val().trim();
+                let validCode = false;
+                let discountMessage = '';
+
+                // Validate promotion code based on selected product
+                switch(product) {
+                    case 'coffee':
+                        if (promotionCode === 'COFFEE20') {
+                            validCode = true;
+                            discountMessage = 'You have received 20% off your coffee!';
+                        }
+                        break;
+                    case 'tea':
+                        if (promotionCode === 'TEA10') {
+                            validCode = true;
+                            discountMessage = 'You have received 10% off your tea!';
+                        }
+                        break;
+                    case 'mug':
+                        if (promotionCode === 'MUG5') {
+                            validCode = true;
+                            discountMessage = 'You have received $5 off your mug!';
+                        }
+                        break;
+                    case 'tshirt':
+                        if (promotionCode === 'TSHIRT10') {
+                            validCode = true;
+                            discountMessage = 'You have received 10% off your T-shirt!';
+                        }
+                        break;
+                    case 'sweater':
+                        if (promotionCode === 'SWEATER15') {
+                            validCode = true;
+                            discountMessage = 'You have received 15% off your sweater!';
+                        }
+                        break;
+                    case 'hat':
+                        if (promotionCode === 'HAT5') {
+                            validCode = true;
+                            discountMessage = 'You have received $5 off your hat!';
+                        }
+                        break;
+                    case 'pajamas':
+                        if (promotionCode === 'PAJAMAS20') {
+                            validCode = true;
+                            discountMessage = 'You have received 20% off your pajamas!';
+                        }
+                        break;
+                    case 'bag':
+                        if (promotionCode === 'BAG10') {
+                            validCode = true;
+                            discountMessage = 'You have received 10% off your bag!';
+                        }
+                        break;
+                    default:
+                        validCode = false;
+                }
+
+                // Display appropriate message based on validation
+                if (validCode) {
+                    alert(discountMessage);
+                    // Clear the promotion code input
+                    $('#promotion').val('');
+                } else {
+                    alert('Invalid promotion code. Please try again.');
+                }
+            });
+        });
     </script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
