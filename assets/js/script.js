@@ -16,22 +16,16 @@
     event.preventDefault();
     
     // Retrieve form input values
-    const orderName = document.getElementById('itemName').value;
-    const orderPrice = document.getElementById('itemPrice').value;
-    const cusName = document.getElementById('customerName').value;
-    const cusEmail = document.getElementById('customerEmail').value;
-    const cusPhone = document.getElementById('customerPhone').value;
-    const orderNumber = document.getElementById('quantity').value;
-    const cusAddress = document.getElementById('customerAddress').value;
+    const cusName = document.getElementById('name').value;
+    const cusEmail = document.getElementById('email').value;
+    const cusPhone = document.getElementById('phone').value;
+    const cusAddress = document.getElementById('address').value;
     
     // Store the form data in localStorage
-    localStorage.setItem('itemName', orderName);
-    localStorage.setItem('itemPrice', orderPrice);
-    localStorage.setItem('customerName', cusName);
-    localStorage.setItem('customerEmail', cusEmail);
-    localStorage.setItem('customerPhone', cusPhone);
-    localStorage.setItem('quantity', orderNumber);
-    localStorage.setItem('customerAddress', cusAddress);
+    localStorage.setItem('name', cusName);
+    localStorage.setItem('email', cusEmail);
+    localStorage.setItem('phone', cusPhone);
+    localStorage.setItem('address', cusAddress);
     
     // Reset the form after submission
     document.getElementById('orderForm').reset();
